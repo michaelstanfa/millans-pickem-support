@@ -1,9 +1,9 @@
- name: run
+name: run
     
 on:
-  schedule:
-    - cron: "0 0 * * *" #runs at 00:00 UTC everyday
-  # workflow_dispatch:
+  workflow_dispatch:
+  # schedule:
+  #   - cron: "0 0 * * *" #runs at 00:00 UTC everyday
 
 jobs:
   build:
