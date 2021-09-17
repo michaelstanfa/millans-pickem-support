@@ -7,6 +7,7 @@ on:
 
 jobs:
   build:
+    env: 
     runs-on: ubuntu-latest
 
     steps:
@@ -18,9 +19,13 @@ jobs:
           python-version: 3.8 #install the python needed
       - name: install requirements.txt
         run: pip install -r requirements.txt
+      - name: set variables
+        
       - name: execute py script # run the run.py to get the latest data
-        run: |
-          python update_scores.py
+        run: python update_scores.py
+          env:
+            MSF_NFL_ID: ${{ secrets.MSF_NFL_ID }}
+            MSF_NFL_SECRET: ${{ secrets.MSF_NFL_SECRET }}
       #   env:
       #     key: ${{ secrets.key }} # if run.py requires passwords..etc, set it as secrets
       # - name: export index
