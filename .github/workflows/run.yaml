@@ -18,9 +18,7 @@ jobs:
         with:
           python-version: 3.8 #install the python needed
       - name: install requirements.txt
-        run: pip install -r requirements.txt
-      - name: set variables
-        
+        run: pip install -r requirements.txt        
       - name: execute py script # run the run.py to get the latest data
         run: python update_scores.py
           env:
