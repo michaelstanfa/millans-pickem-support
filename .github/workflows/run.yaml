@@ -15,7 +15,15 @@ jobs:
       - name: setup python
         uses: actions/setup-python@v2
         with:
-          python-version: 3.8 #install the python needed
+          python-version: 3.8 #install the python needed.
+    - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@master
+        with:
+          project_id: ${{ secrets.GCP_PROJECT_ID }}
+          service_account_key: ${{ secrets.GCP_SA_KEY }}
+          export_default_credentials: true
+      - name: Use gcloud CLI
+        run: gcloud info
       - name: install requirements.txt
         run: pip install -r requirements.txt        
       - name: execute py script # run the run.py to get the latest data
@@ -23,7 +31,7 @@ jobs:
         env:
           MSF_NFL_ID: ${{ secrets.MSF_NFL_ID }}
           MSF_NFL_SECRET: ${{ secrets.MSF_NFL_SECRET }}
-          GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
+          # GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
       #   env:
       #     key: ${{ secrets.key }} # if run.py requires passwords..etc, set it as secrets
       # - name: export index
