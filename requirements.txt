@@ -1,2 +1,5 @@
 requests
 datetime
+python-firebase
+firebase
+firebase_admin
