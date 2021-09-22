@@ -2,12 +2,7 @@ name: update-scores
     
 on:
   schedule:
-    - cron: "45 14 * * 2" # testing
-    # - cron: '30 23 * * 3' # Thursday after TNF
-    # - cron: '0 17 * * 6' # Sunday after first block of games
-    # - cron: '30 20 * * 6' # Sunday after second block of games
-    # - cron: '30 23 * * 6' # Sunday after SNF
-    # - cron: '30 23 * * 0' # Monday after MFN
+    - cron: '48 14 * * 2'
 
   workflow_dispatch:
 
