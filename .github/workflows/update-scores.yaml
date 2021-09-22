@@ -2,9 +2,8 @@ name: update-scores
     
 on:
   schedule:
-    - cron: '30 15 * * 2'
-
-  workflow_dispatch:
+    - cron: '40 15 * * 2'
+    - cron: '40 15 * * 3'
 
 jobs:
   build:
