@@ -4,7 +4,7 @@ on:
   schedule:
     - cron: '30 17 * * 3' # TESTING
     - cron: '0 5 * * 5' # UTC - Friday @ 5 AM UTC, Thursday after TNF
-    - cron: '0 22 * * 7' # UTC - Sunday @ 10 PM UTC, Sunday after first block of games
+    - cron: '0 22 * * SUN' # UTC - Sunday @ 10 PM UTC, Sunday after first block of games
     - cron: '30 3 * * 1' # UTC - Monday @ 3:30 AM UTC, Sunday after second block of games
     - cron: '0 5 * * 1' # UTC- Monday @ 5 AM UTC, Sunday after SNF
     - cron: '30 23 * * 1' # UTC - Tuesday @ 5 am UTCMonday after MFN
