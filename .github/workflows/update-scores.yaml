@@ -2,7 +2,8 @@ name: update-scores
     
 on:
   schedule:
-    - cron: '0 16 * * 3'
+    - cron: '21 16 * * 3'
+    - cron: '22 16 * * 3'
 
 jobs:
   build:
