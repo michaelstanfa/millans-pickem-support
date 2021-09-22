@@ -1,4 +1,4 @@
-name: run
+name: update-scores
     
 on:
   workflow_dispatch:
