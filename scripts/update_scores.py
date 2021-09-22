@@ -33,8 +33,8 @@ class UpdateScores:
             f'https://api.mysportsfeeds.com/v1.2/pull/nfl/2021-regular/scoreboard.json?fordate={today}&status=final',
             auth=(MSF_NFL_ID, MSF_NFL_SECRET))
         r = response.json()
+
         games = r['scoreboard']['gameScore']
-        
         week = str(getWeekOfSeason())
 
         # firebase crap
@@ -42,12 +42,11 @@ class UpdateScores:
         docRef = lines.document(u'202122').collection(u'week').document(week)
 
         for game in games:
-            if(game['isCompleted']):
-                docRef.update({
-                    f'game.{game["game"]["ID"]}.away_team.score': game["awayScore"],
-                    f'game.{game["game"]["ID"]}.home_team.score': game["homeScore"],
-                    f'game.{game["game"]["ID"]}.final': True
-                })
+            docRef.update({
+                f'game.{game["game"]["ID"]}.away_team.score': game["awayScore"],
+                f'game.{game["game"]["ID"]}.home_team.score': game["homeScore"],
+                f'game.{game["game"]["ID"]}.final': game['isCompleted']
+            })
 
 def getWeekOfSeason():
     #this actually represents the number of weeks

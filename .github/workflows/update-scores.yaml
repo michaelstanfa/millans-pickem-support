@@ -2,8 +2,18 @@ name: update-scores
     
 on:
   workflow_dispatch:
-  # schedule:
-  #   - cron: "0 0 * * *" #runs at 00:00 UTC everyday
+  schedule:
+    - cron:
+        - description: Thursday after TNF
+          schedule: "30 23 * * 4"
+        - description: Sunday after first block of games
+          schedule: "0 17 * * 7"
+        - description: Sunday after second block of games
+          schedule: "30 20 * * 7"
+        - description: Sunday after SNF
+          schedule: "30 23 * * 7"
+        - description: Monday after MFN
+          schedule: "30 23 * * 1"
 
 jobs:
   build:
@@ -32,7 +42,7 @@ jobs:
         run: pip install -r requirements.txt        
 
       - name: execute py script # run the run.py to get the latest data
-        run: python update_scores.py
+        run: python scripts/update_scores.py
         env:
           MSF_NFL_ID: ${{ secrets.MSF_NFL_ID }}
           MSF_NFL_SECRET: ${{ secrets.MSF_NFL_SECRET }}
