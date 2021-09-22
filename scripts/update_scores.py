@@ -1,7 +1,7 @@
 import os
 import requests
 import json
-from datetime import date
+from datetime import date, datetime
 import math
 from google.oauth2 import service_account
 from google.auth.transport.requests import AuthorizedSession
@@ -26,7 +26,7 @@ class UpdateScores:
         today = date.today().strftime("%Y%m%d")
 
         print(today)
-        print(date.today().timetuple)
+        print(datetime.now())
 
         # for testing
         # today = 20210919
