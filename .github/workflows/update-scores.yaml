@@ -1,8 +1,7 @@
 name: update-scores
     
 on:
-  workflow_dispatch:
-    
+
   schedule:
     - cron:
         - description: Thursday after TNF
