@@ -11,9 +11,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      uses: szenius/set-timezone@v1.0
-      with:
-        timezoneLinux: "America/Chicago"
+      - name: Setup timezone
+        uses: zcong1993/setup-timezone@master
+        with:
+          timezone: America/Chicago
 
       - name: checkout repo content
         uses: actions/checkout@v2 # checkout the repository content to github runner.
