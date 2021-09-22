@@ -23,10 +23,8 @@ class UpdateScores:
         firebase_admin.initialize_app(cred)
         db = firestore.client()
 
+        ## the time zone is set to LA so there is less of a chance that when this runs, the day has progressed
         today = date.today().strftime("%Y%m%d")
-
-        print(today)
-        print(datetime.now())
 
         # for testing
         # today = 20210919

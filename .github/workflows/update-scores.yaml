@@ -2,7 +2,12 @@ name: update-scores
     
 on:
   schedule:
-    - cron: '01 17 * * 3'
+    - cron: '30 17 * * 3' # TESTING
+    - cron: '0 5 * * 5' # UTC - Friday @ 5 AM UTC, Thursday after TNF
+    - cron: '0 22 * * 7' # UTC - Sunday @ 10 PM UTC, Sunday after first block of games
+    - cron: '30 3 * * 1' # UTC - Monday @ 3:30 AM UTC, Sunday after second block of games
+    - cron: '0 5 * * 1' # UTC- Monday @ 5 AM UTC, Sunday after SNF
+    - cron: '30 23 * * 1' # UTC - Tuesday @ 5 am UTCMonday after MFN
 
   workflow_dispatch:
 
@@ -14,7 +19,7 @@ jobs:
       - name: Setup timezone
         uses: zcong1993/setup-timezone@master
         with:
-          timezone: America/Chicago
+          timezone: America/Los Angeles
 
       - name: checkout repo content
         uses: actions/checkout@v2 # checkout the repository content to github runner.
