@@ -1,8 +1,8 @@
-name: update-scores
+name: update-scores-2
     
 on:
   schedule:
-    - cron: '30 15 * * 2'
+    - cron: '30 10 * * 2'
 
   workflow_dispatch:
 
