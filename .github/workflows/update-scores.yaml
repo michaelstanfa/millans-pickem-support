@@ -4,6 +4,8 @@ on:
   schedule:
     - cron: '01 17 * * 3'
 
+  workflow_dispatch:
+
 jobs:
   build:
     runs-on: ubuntu-latest
