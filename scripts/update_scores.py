@@ -25,6 +25,9 @@ class UpdateScores:
 
         today = date.today().strftime("%Y%m%d")
 
+        print(today)
+        print(date.today())
+
         # for testing
         # today = 20210919
 
