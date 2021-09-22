@@ -19,7 +19,7 @@ jobs:
       - name: Setup timezone
         uses: zcong1993/setup-timezone@master
         with:
-          timezone: America/Los Angeles
+          timezone: America/Los_Angeles
 
       - name: checkout repo content
         uses: actions/checkout@v2 # checkout the repository content to github runner.
