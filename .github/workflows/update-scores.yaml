@@ -2,20 +2,18 @@ name: update-scores
     
 on:
   schedule:
-    # - cron: '30 23 * * 4'
-    - cron:
       - description: Testing stuff
-        schedule: "31 9 * * 2"
+        cron: "31 9 * * 2"
       - description: Thursday after TNF
-        schedule: "30 23 * * 3"
+        cron: "30 23 * * 3"
       - description: Sunday after first block of games
-        schedule: "0 17 * * 6"
+        cron: "0 17 * * 6"
       - description: Sunday after second block of games
-        schedule: "30 20 * * 6"
+        cron: "30 20 * * 6"
       - description: Sunday after SNF
-        schedule: "30 23 * * 6"
+        cron: "30 23 * * 6"
       - description: Monday after MFN
-        schedule: "30 23 * * 0"
+        cron: "30 23 * * 0"
 
 jobs:
   build:
