@@ -24,8 +24,11 @@ class UpdateScores:
         db = firestore.client()
 
         today = date.today().strftime("%Y%m%d")
+
+        # for testing
+        # today = 20210919
+
         # getting games for today
-        today = 20210919
         response = requests.get(
             f'https://api.mysportsfeeds.com/v1.2/pull/nfl/2021-regular/scoreboard.json?fordate={today}&status=final',
             auth=(MSF_NFL_ID, MSF_NFL_SECRET))
@@ -49,9 +52,9 @@ class UpdateScores:
 def getWeekOfSeason():
     #this actually represents the number of weeks
     ## for testing
-    return math.ceil(((date(2021, 9, 19) - DAY_0_OF_SEASON).days)/7)
+    # return math.ceil(((date(2021, 9, 19) - DAY_0_OF_SEASON).days)/7)
 
     ## for real
-    # return math.ceil(((date.today() - DAY_0_OF_SEASON).days)/7)
+    return math.ceil(((date.today() - DAY_0_OF_SEASON).days)/7)
 
 UpdateScores()
