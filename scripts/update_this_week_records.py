@@ -26,8 +26,8 @@ class UpdateWeekRecords:
 
         for user in users.get():
 
-            week = users.document(user.id).collection('seasons').document('202122').collection('weeks').document(weekNumber).get()
-            weekRef = users.document(user.id).collection('seasons').document('202122').collection('weeks').document(weekNumber)
+            week = users.document(user.id).collection('seasons').document('202122').collection('weeks').document(str(weekNumber)).get()
+            weekRef = users.document(user.id).collection('seasons').document('202122').collection('weeks').document(str(weekNumber))
 
             for pick in PICKS:
                 print(pick)
