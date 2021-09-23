@@ -1,6 +1,5 @@
 import os
 import requests
-import json
 from datetime import date, datetime
 import math
 from google.oauth2 import service_account
