@@ -40,7 +40,7 @@ jobs:
         run: pip install -r requirements.txt        
 
       - name: execute py script # run the run.py to get the latest data
-        run: python scripts/update_scores.py
+        run: python scripts/update_overall_records.py
         env:
           MSF_NFL_ID: ${{ secrets.MSF_NFL_ID }}
           MSF_NFL_SECRET: ${{ secrets.MSF_NFL_SECRET }}

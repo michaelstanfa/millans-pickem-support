@@ -55,7 +55,7 @@ class UpdateWeekRecords:
                     if total > 0:
                         result = "W"
                     else:
-                        result = "L"
+                        result = "W"
 
                     weekRef.update({f"{pick}.result":f"{result}"})
 
