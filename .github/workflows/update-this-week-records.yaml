@@ -1,4 +1,4 @@
-name: update-scores
+name: update-this-week-records
     
 on:
   schedule:

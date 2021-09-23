@@ -1,4 +1,4 @@
-name: update-scores
+name: update-overall-records
     
 on:
   schedule:
