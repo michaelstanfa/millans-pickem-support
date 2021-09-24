@@ -21,13 +21,14 @@ class UpdateOverallRecords:
         users = db.collection(u'users')
 
         for user in users.get():
-
+            print(user.id)
             wins = 0
             losses = 0
             
             weeks = users.document(user.id).collection('seasons').document('202122').collection('weeks').get()
             for week in weeks:
                 for pick in PICKS:
+                    print(pick)
                     try:
                         if week.get(f'{pick}.result') == "W":
                             wins += 1

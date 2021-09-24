@@ -1,6 +1,11 @@
-name: update-this-week-records
+name: update-yesterday-records
     
 on:
+  schedule:
+    - cron: '0 8 * * FRI' # UTC - Friday @ 8 AM UTC, Thursday after TNF
+    - cron: '0 8 * * MON' # UTC - Monday @ 8 AM UTC, Sunday after all games
+    - cron: '0 8 * * TUE' # UTC - Monday @ 8 AM UTC, Sunday after second block of games
+
   workflow_dispatch:
 
 jobs:
@@ -35,7 +40,7 @@ jobs:
         run: pip install -r requirements.txt        
 
       - name: execute py script # run the run.py to get the latest data
-        run: python scripts/update_this_week_records.py
+        run: python scripts/update_yesterday_records.py
         env:
           MSF_NFL_ID: ${{ secrets.MSF_NFL_ID }}
           MSF_NFL_SECRET: ${{ secrets.MSF_NFL_SECRET }}
