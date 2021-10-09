@@ -27,6 +27,8 @@ class UpdateScores:
 
         print(datetime.now())
 
+        
+
         # for testing
         # today = 20210919
 
