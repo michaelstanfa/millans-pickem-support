@@ -2,11 +2,11 @@ name: update-scores
     
 on:
   schedule:
-    - cron: '0 5 * * FRI' # UTC - Friday @ 5 AM UTC, Thursday after TNF
+    - cron: '0 6 * * FRI' # UTC - Friday @ 6 AM UTC, Thursday after TNF
     - cron: '0 22 * * SUN' # UTC - Sunday @ 10 PM UTC, Sunday after first block of games
     - cron: '30 3 * * MON' # UTC - Monday @ 3:30 AM UTC, Sunday after second block of games
-    - cron: '0 5 * * MON' # UTC- Monday @ 5 AM UTC, Sunday after SNF
-    - cron: '0 5 * * TUE' # UTC - Tuesday @ 5 am UTCMonday after MFN
+    - cron: '0 6 * * MON' # UTC- Monday @ 6 AM UTC, Sunday after SNF
+    - cron: '0 6 * * TUE' # UTC - Tuesday @ 6 am UTCMonday after MFN
 
   workflow_dispatch:
 

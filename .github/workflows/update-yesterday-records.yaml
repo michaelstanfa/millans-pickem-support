@@ -2,9 +2,9 @@ name: update-yesterday-records
     
 on:
   schedule:
-    - cron: '0 7 * * FRI' # UTC - Friday @ 8 AM UTC, Thursday after TNF
-    - cron: '0 7 * * MON' # UTC - Monday @ 8 AM UTC, Sunday after all games
-    - cron: '0 7 * * TUE' # UTC - Monday @ 8 AM UTC, Sunday after second block of games
+    - cron: '0 7 * * FRI' # UTC - Friday @ 7 AM UTC, Thursday after TNF
+    - cron: '0 7 * * MON' # UTC - Monday @ 7 AM UTC, Sunday after all games
+    - cron: '0 7 * * TUE' # UTC - Tuesday @ 7 AM UTC, Sunday after second block of games
 
   workflow_dispatch:
 
