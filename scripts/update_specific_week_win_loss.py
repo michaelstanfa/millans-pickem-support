@@ -13,7 +13,7 @@ MSF_NFL_SECRET= os.getenv("MSF_NFL_SECRET")
 PICKS = ['pick_1', 'pick_2', 'pick_3']
 DAY_0_OF_SEASON = date(2021, 9, 6)
 
-class UpdateSpecificWeekRecords:
+class UpdateSpecificWeekWinLoss:
 
     def __init__(self):
 
@@ -65,4 +65,4 @@ class UpdateSpecificWeekRecords:
                     weekRef.update({f"{pick}.result":f"{result}"})
 
 
-UpdateSpecificWeekRecords()
+UpdateSpecificWeekWinLoss()
