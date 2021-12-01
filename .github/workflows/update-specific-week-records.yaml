@@ -1,7 +1,11 @@
-name: update-this-week-records
+name: update-specific-week-records
     
 on:
   workflow_dispatch:
+    inputs:
+      week:
+        description: 'Week of season to update records'
+        required: true
 
 jobs:
   build:
@@ -35,7 +39,7 @@ jobs:
         run: pip install -r requirements.txt        
 
       - name: execute py script # run the run.py to get the latest data
-        run: python scripts/update_this_week_records.py
+        run: python scripts/update_specific_week_records.py ${{ github.event.inputs.week }}
         env:
           MSF_NFL_ID: ${{ secrets.MSF_NFL_ID }}
           MSF_NFL_SECRET: ${{ secrets.MSF_NFL_SECRET }}
