@@ -22,8 +22,13 @@ class UpdateWeekRecords:
 
         # firebase crap
         users = db.collection(u'users')
-        weekNumber = getWeekOfSeason()
+        
+        if(len(sys.argv) == 1):
+            print("This script required a week-of-season integer input.")
+            sys.exit(0)
 
+        weekNumber = sys.argv[1]
+        
         for user in users.get():
 
             week = users.document(user.id).collection('seasons').document('202122').collection('weeks').document(str(weekNumber)).get()
